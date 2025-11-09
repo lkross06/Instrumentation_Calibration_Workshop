@@ -42,5 +42,15 @@ void setup() {
 }
 
 void loop() {
-  
+    //read differential voltage
+    long raw_data = adc.readSingleContinuous();    
+    //convert raw ADC output to voltage
+    float voltage_value = adc.convertToVoltage(raw_data) * 1000;    //*1000 to convert mV to V
+    
+    /* HERE is where you would add your calibration coefficients to convert the voltage_value to weight/force applied */
+
+    Serial.print(String(voltage_value));
+    Serial.println();
+
+    delay(100); //wait 100ms
 }
