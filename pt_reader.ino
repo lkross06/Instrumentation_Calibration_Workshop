@@ -49,6 +49,10 @@ void loop() {
   
   pressureADC.readAllChannels(ADS8688_CS, true, ptVoltages);
 
+  /* ======================================================================================= */
+  /* HERE IS WHERE YOU WOULD PUT YOUR LINEAR REGRESSION COEFFICIENTS AND CALIBRATE THE VALUE */
+  /* ======================================================================================= */
+
   Serial.println(ptVoltages[7]);    //Ryan hopefull will hook up the PT to PT0 on the DAQ...
 
   delay(200);   //wait 200ms before reading again
