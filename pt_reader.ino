@@ -25,7 +25,6 @@ void setup() {
   Serial.begin(115200);   //baud rate = 115200 baud
   delay(1000);
 
-  
   //This pin controls an orange LED in the middle of the DAQ. We will
   //  turn on the LED when our program starts, so we know that our
   //  code was flashed + executed successfully.
@@ -36,8 +35,8 @@ void setup() {
   spi.begin(SCLK, MISO, MOSI, ADS8688_CS);
 
   //Initialize ADC
-  pressureADC.begin(MISO, SCLK, MOSI, ADS8688_CS, 7, VREF, RANGE);    //this library connects to 2 ADCs, and this board has the second ADC's CS on pin 7
-  pressureADC.setInputRange(ADS8688_CS, 0x05);    //don't worry about this setting too much for now
+  pressureADC.begin(MISO, SCLK, MOSI, ADS8688_CS, -1, VREF, RANGE);    //this library connects to 2 ADCs, and this board has the second ADC's CS on pin 7
+  pressureADC.setInputRange(ADS8688_CS, RANGE);    //don't worry about this setting too much for now
 
   Serial.println("Initialization complete.");
 }
