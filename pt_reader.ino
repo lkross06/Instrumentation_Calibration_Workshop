@@ -52,7 +52,7 @@ void loop() {
   /* HERE IS WHERE YOU WOULD PUT YOUR LINEAR REGRESSION COEFFICIENTS AND CALIBRATE THE VALUE */
   /* ======================================================================================= */
 
-  Serial.println(ptVoltages[7]);    //Ryan hopefull will hook up the PT to PT0 on the DAQ...
+  Serial.println(ptVoltages[7] / 2);    //Ryan hopefull will hook up the PT to PT0 on the DAQ...
 
   delay(200);   //wait 200ms before reading again
 }
